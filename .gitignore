@@ -1,0 +1,4 @@
+node_modules
+frontend/components
+frontend/js/modules/*.js
+!frontend/js/modules/*.src.js
