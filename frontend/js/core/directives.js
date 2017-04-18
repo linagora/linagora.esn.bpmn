@@ -5,7 +5,7 @@ angular.module('esn.bpmn')
   return {
     retrict: 'E',
     replace: true,
-    template: applicationMenuTemplateBuilder('/#/bpmn', 'c2net', 'C2Net')
+    template: applicationMenuTemplateBuilder('/#/bpmn', 'c2net', 'Processus')
   };
 })
 
