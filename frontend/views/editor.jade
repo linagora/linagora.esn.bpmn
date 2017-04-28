@@ -10,7 +10,7 @@
 #editor
   ul.buttons.opacity-buttons
     li
-      input.js-upload-diagram(ng-model='photo', onchange='file_changed(this)', type='file', accept='text/xml')
+      input.js-upload-diagram(ng-model='photo', onchange='angular.element(this).scope().file_changed(this)', type='file', accept='text/xml')
     li
       a(ng-click='saveXML()', href='', title='Save')
         | Save local
