@@ -16,8 +16,10 @@ angular.module('esn.bpmn')
     var getFileName = function(id) {
       return $http.get(apiFileUrl + id).then(function(response) {
         var dataJson = {};
-        dataJson.id = id;
-        dataJson.name = response.headers()['content-disposition'].split('\"')[1];
+        if(response.headers()['content-disposition'] !== undefined){
+          dataJson.id = id;
+          dataJson.name = response.headers()['content-disposition'].split('\"')[1];
+        }
         return dataJson;
       });
     };

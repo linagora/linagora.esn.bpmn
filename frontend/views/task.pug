@@ -28,7 +28,7 @@
       div(ng-show='!hasTask')
         h2 No task to do
     ul.buttons.opacity-buttons
-      li.bpmn-icon-size
-        a(ng-click='showListTaskModal()', href='', title='List')
-          span.glyphicon.glyphicon-list-alt
-          | List Task
+      li
+        a(ng-click='goToEditor()', href='', title='activiti')
+          span.glyphicon.glyphicon-export
+          | Editor

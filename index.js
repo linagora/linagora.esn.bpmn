@@ -48,6 +48,7 @@ var myAwesomeModule = new AwesomeModule('esn.bpmn', {
         'core/directives.js',
         'core/controllers.js',
         'core/task.js',
+        'core/executor.js',
         'task/listTask.js',
         'modules/bpmn-loader.js'
       ];
