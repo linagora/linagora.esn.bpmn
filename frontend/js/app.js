@@ -22,6 +22,12 @@ angular.module('esn.bpmn', [
         controller: 'bpmnController'
       })
 
+      .state('bpmnExecutor', {
+        url: '/bpmn/executor',
+        templateUrl: '/bpmnJs/views/executor',
+        controller: 'bpmnExecutor'
+      })
+
       .state('bpmnTask', {
         url: '/bpmn/task',
         templateUrl: '/bpmnJs/views/task',

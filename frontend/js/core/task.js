@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('esn.bpmn')
-  .controller('bpmnTask', function($scope, $window, $http, bpmnLoader, bpmnService, userService, $modal, notificationFactory) {
+  .controller('bpmnTask', function($scope, $window, $http, bpmnLoader, bpmnService, userService, $modal, notificationFactory, $state) {
     $scope.selectedTab = 'task';
 
     $scope.userToken = userService.getToken();
@@ -11,6 +11,10 @@ angular.module('esn.bpmn')
 
     $scope.activitiName = 'Task form';
     $scope.activitiFields = {};
+
+    $scope.goToEditor = function() {
+      $state.go('bpmnEditor');
+    };
 
     function userInfo() {
       return userService.userInfo().then(function(result) {
