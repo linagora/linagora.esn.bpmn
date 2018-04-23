@@ -4,7 +4,9 @@ angular.module('esn.bpmn', [
   'op.dynamicDirective',
   'ui.router',
   'formly',
-  'formlyBootstrap'
+  'formlyBootstrap',
+  'esn.configuration',
+  'esn.module-registry'
 ])
 
 .config([
