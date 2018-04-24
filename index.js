@@ -9,6 +9,7 @@ var myAwesomeModule = new AwesomeModule('esn.bpmn', {
   dependencies: [
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.logger', 'logger'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.auth', 'auth'),
+    new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.esn-config', 'esn-config'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.webserver.wrapper', 'webserver-wrapper'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.filestore', 'filestore'),
     new Dependency(Dependency.TYPE_NAME, 'linagora.esn.core.webserver.middleware.authorization', 'authorizationMW')
@@ -43,14 +44,17 @@ var myAwesomeModule = new AwesomeModule('esn.bpmn', {
         '../components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js',
         '../components/file-saver/FileSaver.min.js',
         'app.js',
+        'app.run.js',
         'services/bpmnServices.js',
+        'services/bpmn-config.service.js',
         'services/userService.js',
         'core/directives.js',
         'core/controllers.js',
         'core/task.js',
         'core/executor.js',
         'task/listTask.js',
-        'modules/bpmn-loader.js'
+        'modules/bpmn-loader.js',
+        'config-form/bpmn-config-form.component.js'
       ];
 
       webserverWrapper.injectAngularModules('bpmnJs', angularFiles, ['esn.bpmn'], ['esn']);
@@ -58,8 +62,12 @@ var myAwesomeModule = new AwesomeModule('esn.bpmn', {
       webserverWrapper.injectLess('bpmnJs', [lessFile], 'esn');
       webserverWrapper.addApp('bpmnJs', app);
 
+      require('./backend/lib/config')(dependencies).register();
+
       return callback();
-    }
+    },
+
+    start: (dependencies, callback) => callback()
   }
 });
 

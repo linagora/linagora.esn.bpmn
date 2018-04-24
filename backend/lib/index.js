@@ -1,7 +1,15 @@
 'use strict';
 
 module.exports = function(dependencies) {
-  var api = {};
+  const api = {};
+  const config = require('./config')(dependencies);
 
-  return api;
+  function register() {
+    config.register();
+  }
+
+  return {
+    api,
+    register
+  };
 };
