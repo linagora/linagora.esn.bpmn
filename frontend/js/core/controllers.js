@@ -142,11 +142,6 @@ angular.module('esn.bpmn')
     };
 
     $scope.activitiExecuteBpmn = function() {
-      var blob = new Blob(['<xml></xml>'], {type: 'text/xml'});
-      var fileName = 'test.xml';
-
-      var fileOfBlob = new File([blob], fileName);
-      bpmnService.activitiExecuteBpmn(fileOfBlob);
       saveDiagram(function(err, xml) {
         if (err) {
           notificationFactory.weakError('Error', 'BPMN is not initialized : ' + err);
