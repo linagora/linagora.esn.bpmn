@@ -1,6 +1,6 @@
-.bpmn
-  .my-task-manager#task
-    .task-manager-margin
+.bpmn.full-width
+  .row.my-task-manager#task
+    .col-md-8.col-md-offset-2.task-manager-margin
       .row
         div(ng-show='hasTask')
           h2
@@ -23,9 +23,9 @@
             legend Task Form
             form(name='activitiName', novalidate='')
               formly-form(model='activiti', fields='activitiFields')
-                br
-                button.btn.btn-primary.submit-button.pull-right.second-submit-button(type='submit', ng-click='onSubmit(activiti)') Submit
-                button.btn.btn-secondary.pull-right(type='submit', ng-click='cancel()') Cancel
+                div.flex.flex-space-around
+                  button.btn.btn-secondary(type='submit', ng-click='cancel()') Cancel
+                  button.btn.btn-primary.submit-button.second-submit-button(type='submit', ng-click='onSubmit(activiti)') Submit
         div(ng-show='!hasTask')
           h2 No task to do
       ul.buttons.opacity-buttons
