@@ -8,8 +8,7 @@ We assume that openpaas is already installed and is prerequis(npm and bower)
 
 Here the process to install the module for openpaas
 
-  - npm i && bower i
-  - grunt browserify
+  - npm i
 
 ## Integrate it
 
